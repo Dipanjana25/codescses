@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int k=1e9+7;
+#define int long long
+
+int32_t main() {
+    int n,p,l=1;
+    cin>>n;
+    p=n;
+    while(p--){
+        l=2*l%k;
+    }
+    cout<<l<<endl;
+	return 0;
+}
