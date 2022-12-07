@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int k=1e9+7;
+#define int long long
+
+int32_t main() {
+    int n,i,c=0;
+    cin>>n;
+    int p=1;
+    while(pow(5,p)<=n){
+        c+=n/pow(5,p);
+        p++;
+    }
+    cout<<c<<endl;
+	return 0;
+}
