@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+int32_t main() {
+    int n,q,a,b,i,sum=0;
+    cin>>n>>q;
+    int x[n];int s[n];
+    for(i=0;i<n;i++){
+    cin>>x[i];
+    sum+=x[i];
+    s[i]=sum;}
+    while(q--){
+        cin>>a>>b;
+        if(a==1)
+        cout<<s[b-1]<<endl;
+        else
+        cout<<s[b-1]-s[a-2]<<endl;
+    }
+	// your code goes here
+	return 0;
+}

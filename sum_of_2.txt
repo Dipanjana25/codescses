@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+int32_t main() {
+    int n,x,i,j,f=0;
+    cin>>n>>x;
+    int a[n];pair<int,int>p[n];
+    for(i=0;i<n;i++){
+    cin>>a[i];
+    p[i].first=a[i];
+    p[i].second=i+1;
+    }
+    sort(p,p+n);
+    if(n==1){
+    cout<<"IMPOSSIBLE"<<endl;return 0;}
+    i=0;
+    j=n-1;
+    while(i<j){
+        if(p[i].first+p[j].first==x){
+        cout<<p[i].second<<" "<<p[j].second<<endl;f++;break;}
+        else if((p[i].first+p[j].first)<x)
+        i++;
+        else
+        j--;
+    }
+    if(f==0)
+    cout<<"IMPOSSIBLE"<<endl;
+	// your code goes here
+	return 0;
+}
