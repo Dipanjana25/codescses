@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+int32_t main() {
+    int t,a,b,c,d,e,f,v;
+    cin>>t;
+    while(t--){
+        cin>>a>>b>>c>>d>>e>>f;
+        v=(d-b)*(e-c)-(f-d)*(c-a);
+        if(v==0)
+        cout<<"TOUCH"<<endl;
+        else if(v<0)
+        cout<<"LEFT"<<endl;
+        else
+        cout<<"RIGHT"<<endl;
+    }
+	// your code goes here
+	return 0;
+}
