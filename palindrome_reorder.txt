@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+int32_t main() {
+    string s,ans="";
+    cin>>s;
+    int n=s.length();
+    int i,f=0;
+    map<int,int>mp;
+    sort(s.begin(),s.end());
+    for(i=0;i<n;i++){
+        mp[s[i]]++;
+    }
+    for(auto i:mp){
+        if(i.second%2){
+        f++;
+        ans=string(i.second,i.first);}
+    }
+    if(n%2==0 && f>0)
+    cout<<"NO SOLUTION"<<endl;
+    else if(n%2==1 && f!=1)
+    cout<<"NO SOLUTION"<<endl;
+    else{
+    for(auto i:mp){
+        if(i.second%2==0)
+        ans=string(i.second/2,i.first)+ans+string(i.second/2,i.first);
+    }
+    cout<<ans<<endl;
+    }
+	// your code goes here
+	return 0;
+}
