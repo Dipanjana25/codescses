@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int k=1e9+7;
+
+int ans(int a,int b){
+    if(b==0)
+    return 1;
+    ll res;
+    if(b%2==0){
+    res=ans(a,b/2);
+    res=(res*res)%k;}
+    if(b%2)
+    {
+        res=a%k;
+        res= (res*ans(a,b-1)%k)%k;
+    }
+    return res;
+}
+int main() {
+    int n,a,b;
+    cin>>n;
+    while(n--){
+        cin>>a>>b;
+        cout<<ans(a,b)<<endl;
+    }
+	// your code goes here
+	return 0;
+}
